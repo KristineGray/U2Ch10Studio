@@ -47,9 +47,9 @@ namespace SkillsTracker.Controllers
             string labelDate = "<label for='date'>Date:</label>";
             string inputDate = "<input type='date' id='date' />";
 
-            string optionOne = "<option value='basics'>Learning Basics</option>";
-            string optionTwo = "<option value='makingApps'>Making Apps</option>";
-            string optionThree = "<option value='master'>Master Coder</option>";
+            string optionOne = "<option value='beginner'>Learning Basics</option>";
+            string optionTwo = "<option value='intermediate'>Making Apps</option>";
+            string optionThree = "<option value='expert'>Master Coder</option>";
             string select = $"<select>{optionOne}{optionTwo}{optionThree}</select>";
 
             string labelCSharp = "<label>C#</label>";
