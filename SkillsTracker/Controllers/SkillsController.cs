@@ -65,9 +65,10 @@ namespace SkillsTracker.Controllers
             string labelJavaScript = "<label>JavaScript</label>";
             string labelPython = "<label>Python</label>";
 
+            string submit = "<input type='submit' value='Submit'>";
             string formClose = "</form>";
 
-            string html = formOpen + labelDate + inputDate + labelCSharp + select + labelJavaScript + select + labelPython + select + formClose;
+            string html = formOpen + labelDate + inputDate + labelCSharp + select + labelJavaScript + select + labelPython + select + submit + formClose;
 
             return Content(html, "text/html");
         }
