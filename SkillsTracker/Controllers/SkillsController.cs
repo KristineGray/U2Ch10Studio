@@ -34,6 +34,15 @@ namespace SkillsTracker.Controllers
             return Content(html, "text/html");
         }
 
+        /*
+        Also at localhost:5001/skills/form, 
+        use [HttpPost] and 
+        request parameters to update the HTML with 
+            an h1 stating the submitted date and 
+            a list showing the user’s learning progress in the three programming languages they chose
+        */
+
+        [HttpPost]
         public IActionResult Form()
         {
             /*
