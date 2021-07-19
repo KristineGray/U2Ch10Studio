@@ -44,13 +44,17 @@ namespace SkillsTracker.Controllers
             */
 
             string formOpen = "<form>";
-            string labelDate = "<label>Date:</label>";
+            string labelDate = "<label for='date'>Date:</label>";
+            string inputDate = "<input type='date' id='date' />";
             string labelCSharp = "<label>C#</label>";
+
             string labelJavaScript = "<label>JavaScript</label>";
+
             string labelPython = "<label>Python</label>";
+
             string formClose = "</form>";
 
-            string html = formOpen + labelDate + date + labelCSharp + csharp + labelJavaScript + js + labelPython + python + formClose;
+            string html = formOpen + labelDate + inputDate + labelCSharp + labelJavaScript + labelPython + formClose;
 
             return Content(html, "text/html");
         }
