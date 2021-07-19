@@ -23,8 +23,13 @@ namespace SkillsTracker.Controllers
 
             string title = "<h1>Skills Tracker</h1>";
             string subTitle = "<h2>Coding skills to learn:</h2>";
+                       
+            string langOne = "<li>C#</li>";
+            string langTwo = "<li>Python</li>";
+            string langThree = "<li>JavaScript</li>";
+            string orderedList = "<ol>" + langOne + langTwo + langThree + "</ol>";
 
-            string html = title + subTitle;
+            string html = title + subTitle + orderedList;
 
             return Content(html, "text/html");
         }
