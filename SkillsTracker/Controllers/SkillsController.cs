@@ -33,5 +33,26 @@ namespace SkillsTracker.Controllers
 
             return Content(html, "text/html");
         }
+
+        public IActionResult Form()
+        {
+            /*
+            At localhost:5001 / skills / form, 
+            add a form that lets the user 
+                enter a date and 
+                choose their learning progress in each of the programming skills listed at / skills
+            */
+
+            string formOpen = "<form>";
+            string labelDate = "<label>Date:</label>";
+            string labelCSharp = "<label>C#</label>";
+            string labelJavaScript = "<label>JavaScript</label>";
+            string labelPython = "<label>Python</label>";
+            string formClose = "</form>";
+
+            string html = formOpen + labelDate + date + labelCSharp + csharp + labelJavaScript + js + labelPython + python + formClose;
+
+            return Content(html, "text/html");
+        }
     }
 }
