@@ -8,9 +8,25 @@ namespace SkillsTracker.Controllers
 {
     public class SkillsController : Controller
     {
+        [HttpGet]
+        [Route("/skills/")]
         public IActionResult Index()
         {
-            return View();
+            /*
+            At localhost:5001 / skills, 
+            add text that states the three possible programming languages someone could be working on. 
+            You need to have 
+                an h1 with the title “Skills Tracker”, 
+                an h2, and 
+                an ol containing three programming languages of your choosing.
+            */
+
+            string title = "<h1>Skills Tracker</h1>";
+            string subTitle = "<h2>Coding skills to learn:</h2>";
+
+            string html = title + subTitle;
+
+            return Content(html, "text/html");
         }
     }
 }
