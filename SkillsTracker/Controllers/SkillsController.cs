@@ -46,15 +46,19 @@ namespace SkillsTracker.Controllers
             string formOpen = "<form>";
             string labelDate = "<label for='date'>Date:</label>";
             string inputDate = "<input type='date' id='date' />";
+
+            string optionOne = "<option value='basics'>Learning Basics</option>";
+            string optionTwo = "<option value='makingApps'>Making Apps</option>";
+            string optionThree = "<option value='master'>Master Coder</option>";
+            string select = $"<select>{optionOne}{optionTwo}{optionThree}</select>";
+
             string labelCSharp = "<label>C#</label>";
-
             string labelJavaScript = "<label>JavaScript</label>";
-
             string labelPython = "<label>Python</label>";
 
             string formClose = "</form>";
 
-            string html = formOpen + labelDate + inputDate + labelCSharp + labelJavaScript + labelPython + formClose;
+            string html = formOpen + labelDate + inputDate + labelCSharp + select + labelJavaScript + select + labelPython + select + formClose;
 
             return Content(html, "text/html");
         }
