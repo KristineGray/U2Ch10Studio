@@ -47,19 +47,23 @@ namespace SkillsTracker.Controllers
             string labelDate = "<label for='date'>Date:</label>";
             string inputDate = "<input type='date' name='date' id='date' />";
 
-            string optionOne = "<option value='beginner'>Learning Basics</option>";
-            string optionTwo = "<option value='intermediate'>Making Apps</option>";
-            string optionThree = "<option value='expert'>Master Coder</option>";
-            string select = $"<select>{optionOne}{optionTwo}{optionThree}</select>";
-
+            string optionOne = "<option value='Learning Basics'>Learning Basics</option>";
+            string optionTwo = "<option value='Making Apps'>Making Apps</option>";
+            string optionThree = "<option value='Master Coder'>Master Coder</option>";
+            
             string labelCSharp = "<label>C#</label>";
+            string csSelect = $"<select for='csharp' name='csharpOption'>{optionOne}{optionTwo}{optionThree}</select>";
+
             string labelJavaScript = "<label>JavaScript</label>";
+            string jsSelect = $"<select for='javascript' name='jsOption'>{optionOne}{optionTwo}{optionThree}</select>";
+            
             string labelPython = "<label>Python</label>";
+            string pySelect = $"<select for='python' name='pythonOption'>{optionOne}{optionTwo}{optionThree}</select>";
 
             string submit = "<input type='submit' value='Submit'>";
             string formClose = "</form>";
 
-            string html = formOpen + labelDate + inputDate + labelCSharp + select + labelJavaScript + select + labelPython + select + submit + formClose;
+            string html = formOpen + labelDate + inputDate + labelCSharp + csSelect + labelJavaScript + jsSelect + labelPython + pySelect + submit + formClose;
 
             return Content(html, "text/html");
         }
