@@ -43,9 +43,9 @@ namespace SkillsTracker.Controllers
                 choose their learning progress in each of the programming skills listed at / skills
             */
 
-            string formOpen = "<form method='post'>";
+            string formOpen = "<form method='post' action='/skills/form'>";
             string labelDate = "<label for='date'>Date:</label>";
-            string inputDate = "<input type='date' id='date' />";
+            string inputDate = "<input type='date' name='date' id='date' />";
 
             string optionOne = "<option value='beginner'>Learning Basics</option>";
             string optionTwo = "<option value='intermediate'>Making Apps</option>";
