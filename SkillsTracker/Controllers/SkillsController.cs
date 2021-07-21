@@ -34,15 +34,6 @@ namespace SkillsTracker.Controllers
             return Content(html, "text/html");
         }
 
-        /*
-        Also at localhost:5001/skills/form, 
-        use [HttpPost] and 
-        request parameters to update the HTML with 
-            an h1 stating the submitted date and 
-            a list showing the user’s learning progress in the three programming languages they chose
-        */
-
-        [HttpPost]
         public IActionResult Form()
         {
             /*
@@ -52,7 +43,7 @@ namespace SkillsTracker.Controllers
                 choose their learning progress in each of the programming skills listed at / skills
             */
 
-            string formOpen = "<form>";
+            string formOpen = "<form method='post'>";
             string labelDate = "<label for='date'>Date:</label>";
             string inputDate = "<input type='date' id='date' />";
 
@@ -72,5 +63,47 @@ namespace SkillsTracker.Controllers
 
             return Content(html, "text/html");
         }
+
+        /*
+        Also at localhost:5001/skills/form, 
+        use [HttpPost] and 
+        request parameters to update the HTML with 
+            an h1 stating the submitted date and 
+            a list showing the user’s learning progress in the three programming languages they chose
+        */
+
+        [HttpPost("/skills/form")]
+        public IActionResult SubmittedForm(string date, string csharpOption, string jsOption, string pythonOption)
+        {
+            string title = $"<h1>{date}</h1>";
+            string olStart = "<ol>";
+            string csharp = $"<li>C#: {csharpOption}</li>";
+            string js = $"<li>JavaScript: {jsOption}</li>";
+            string python = $"<li>Python: {pythonOption}</li>";
+            string olEnd = "</ol>";
+
+            string html = title + olStart + csharp + js + python + olEnd;
+
+            return Content(html, "text/html");
+        }
+
+        /*
+        [HttpPost("/skills/form")]
+        public IActionResult SubmittedForm(string submittedDate, Dictionary<string, string> langProgression)
+        {
+
+            string dateTag = $"<h1>{submittedDate}</h1>";
+            string listTag = "<ol>";
+            foreach (KeyValuePair<string, string> pair in langProgression)
+            {
+                string progress = $"<li>{pair.Key}: {pair.Value}</li>";
+                listTag += progress;
+            }
+            listTag += "</ol>";
+
+            string html = dateTag + listTag;
+            return Content(html, "text/html");
+        }
+        */
     }
 }
